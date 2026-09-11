@@ -36,7 +36,7 @@ function GalleryAdmin() {
     const loadPhotos = async () => {
       try {
         const response = await fetch(
-          "http://127.0.0.1:5000/api/gallery/photos"
+          "https://prudhvisai-events.onrender.com/api/gallery/photos"
         );
 
         const data = await response.json();
@@ -95,7 +95,7 @@ function GalleryAdmin() {
       });
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/gallery/upload",
+        "https://prudhvisai-events.onrender.com/api/gallery/upload",
         {
           method: "POST",
           body: formData,
@@ -158,7 +158,7 @@ function GalleryAdmin() {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:5000/api/gallery/photos/${encodeURIComponent(
+        `https://prudhvisai-events.onrender.com/api/gallery/photos/${encodeURIComponent(
           filename
         )}`,
         {

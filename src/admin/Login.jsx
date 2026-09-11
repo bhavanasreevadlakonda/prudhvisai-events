@@ -10,7 +10,7 @@ function Login({ onLogin }) {
     setError("");
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/admin/login", {
+      const response = await fetch("https://prudhvisai-events.onrender.com/api/admin/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

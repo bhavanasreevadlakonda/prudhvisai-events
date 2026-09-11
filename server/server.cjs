@@ -270,9 +270,9 @@ app.post(
           category:
             category,
 
-          url:
-            `http://127.0.0.1:5000/uploads/` +
-            file.filename,
+         url:
+  `${req.protocol}://${req.get("host")}/uploads/` +
+  file.filename,
         };
       });
 
