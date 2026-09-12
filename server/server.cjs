@@ -311,21 +311,28 @@ app.post(
 // GET ALL GALLERY PHOTOS
 // ======================================
 
-app.get(
-  "/api/gallery/photos",
-  (req, res) => {
-    try {
-      const gallery =
-        readGallery();
+app.get("/api/gallery/photos", (req, res) => {
+  try {
+    const gallery = readGallery();
 
-      console.log(
-        "Gallery photos found:",
-        gallery.length
-      );
+    const baseUrl = `${req.protocol}://${req.get("host")}`;
 
-      return res.json({
-        photos: gallery,
-      });
+    const updatedGallery = gallery.map((photo) => ({
+      ...photo,
+      url: `${baseUrl}/uploads/${photo.filename}`,
+    }));
+
+    console.log("Gallery photos found:", updatedGallery.length);
+
+    return res.json({ photos: updatedGallery });
+  } catch (error) {
+    console.error("Unable to load gallery:", error);
+
+    return res.status(500).json({
+      message: "Unable to load gallery photos.",
+    });
+  }
+});
 
     } catch (error) {
       console.error(
