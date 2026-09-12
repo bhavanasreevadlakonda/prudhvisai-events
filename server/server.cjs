@@ -315,7 +315,7 @@ app.get("/api/gallery/photos", (req, res) => {
   try {
     const gallery = readGallery();
 
-    const baseUrl = `${req.protocol}://${req.get("host")}`;
+    const baseUrl = `https://${req.get("host")}`;
 
     const updatedGallery = gallery.map((photo) => ({
       ...photo,
