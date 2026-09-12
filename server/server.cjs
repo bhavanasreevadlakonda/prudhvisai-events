@@ -324,7 +324,9 @@ app.get("/api/gallery/photos", (req, res) => {
 
     console.log("Gallery photos found:", updatedGallery.length);
 
-    return res.json({ photos: updatedGallery });
+    return res.json({
+      photos: updatedGallery,
+    });
   } catch (error) {
     console.error("Unable to load gallery:", error);
 
@@ -333,20 +335,6 @@ app.get("/api/gallery/photos", (req, res) => {
     });
   }
 });
-
-    } catch (error) {
-      console.error(
-        "Unable to load gallery:",
-        error
-      );
-
-      return res.status(500).json({
-        message:
-          "Unable to load gallery photos.",
-      });
-    }
-  }
-);
 
 
 // ======================================
