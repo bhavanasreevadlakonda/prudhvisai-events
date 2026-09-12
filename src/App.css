@@ -125,7 +125,6 @@ nav a:hover {
   align-items: center;
   justify-content: center;
 
-  /* Wedding photo remains visible */
   background: rgba(255, 248, 243, 0.25);
 
   position: relative;
@@ -551,15 +550,24 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  gap: 30px;
 }
 
 footer h2 {
   font-family: Georgia, serif;
+  margin-bottom: 8px;
 }
 
 footer p {
   color: #c9bfbb;
   font-size: 13px;
+  margin: 5px 0;
+}
+
+footer strong {
+  color: #d9a77e;
+  font-weight: 600;
 }
 
 /* ================= MOBILE ================= */
@@ -653,5 +661,9 @@ footer p {
 
   .featured {
     transform: none;
+  }
+
+  footer {
+    padding: 30px 5%;
   }
 }
