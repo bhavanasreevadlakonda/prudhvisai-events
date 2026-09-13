@@ -1,32 +1,21 @@
 [
   {
-    "filename": "1789065342667-953933321.jpeg",
-    "originalName": "WhatsApp Image 2026-09-09 at 8.05.53 AM 5.jpeg",
+    "filename": "1789223667915-349416815.jpeg",
+    "originalName": "0.jpeg",
     "category": "Marriage",
-    "url": "http://127.0.0.1:5000/uploads/1789065342667-953933321.jpeg"
+    "url": "http://localhost:5000/uploads/1789223667915-349416815.jpeg"
   },
   {
-    "filename": "1789065349917-916300026.jpeg",
-    "originalName": "WhatsApp Image 2026-09-09 at 8.05.53 AM.jpeg",
+    "filename": "1789223879565-828455800.jpeg",
+    "originalName": "9.jpeg",
     "category": "Marriage",
-    "url": "http://127.0.0.1:5000/uploads/1789065349917-916300026.jpeg"
+    "url": "http://localhost:5000/uploads/1789223879565-828455800.jpeg"
   },
   {
-    "filename": "1789065354205-169130589.jpeg",
-    "originalName": "WhatsApp Image 2026-09-09 at 8.06.03 AM 3.jpeg",
+    "filename": "prudhvisai-events/gallery/htpvqozeiuxqcmqkide9",
+    "originalName": "3.jpeg",
     "category": "Marriage",
-    "url": "http://127.0.0.1:5000/uploads/1789065354205-169130589.jpeg"
-  },
-  {
-    "filename": "1789065361656-61600662.jpeg",
-    "originalName": "wedding-bg.jpeg.jpeg",
-    "category": "Marriage",
-    "url": "http://127.0.0.1:5000/uploads/1789065361656-61600662.jpeg"
-  },
-  {
-    "filename": "1789065373380-674570862.jpeg",
-    "originalName": "cc.jpeg",
-    "category": "Cradle Ceremony",
-    "url": "http://127.0.0.1:5000/uploads/1789065373380-674570862.jpeg"
+    "url": "https://res.cloudinary.com/vcsl8eqc/image/upload/v1789224267/prudhvisai-events/gallery/htpvqozeiuxqcmqkide9.jpg",
+    "publicId": "prudhvisai-events/gallery/htpvqozeiuxqcmqkide9"
   }
 ]

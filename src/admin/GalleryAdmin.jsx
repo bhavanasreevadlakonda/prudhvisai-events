@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./GalleryAdmin.css";
 
+const API_BASE_URL = "http://localhost:5000";
+
 const eventCategories = [
   "Marriage",
   "Engagement & Reception",
@@ -36,7 +38,7 @@ function GalleryAdmin() {
     const loadPhotos = async () => {
       try {
         const response = await fetch(
-          "https://prudhvisai-events.onrender.com/api/gallery/photos"
+          `${API_BASE_URL}/api/gallery/photos`
         );
 
         const data = await response.json();
@@ -95,7 +97,7 @@ function GalleryAdmin() {
       });
 
       const response = await fetch(
-        "https://prudhvisai-events.onrender.com/api/gallery/upload",
+        `${API_BASE_URL}/api/gallery/upload`,
         {
           method: "POST",
           body: formData,
@@ -158,7 +160,7 @@ function GalleryAdmin() {
 
     try {
       const response = await fetch(
-        `https://prudhvisai-events.onrender.com/api/gallery/photos/${encodeURIComponent(
+        `${API_BASE_URL}/api/gallery/photos/${encodeURIComponent(
           filename
         )}`,
         {

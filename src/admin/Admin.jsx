@@ -1,7 +1,46 @@
+
+import { useEffect, useState } from "react";
 import "./Admin.css";
 import GalleryAdmin from "./GalleryAdmin";
 
+const API_BASE_URL = "https://prudhvisai-events.onrender.com";
+
 function Admin() {
+  const [galleryCount, setGalleryCount] = useState(0);
+
+  useEffect(() => {
+  const loadGalleryCount = async () => {
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/api/gallery/photos?time=${Date.now()}`,
+        {
+          cache: "no-store",
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to load gallery");
+      }
+
+      const data = await response.json();
+
+      console.log("GALLERY DATA:", data);
+      console.log("TOTAL PHOTOS:", data.photos.length);
+
+      setGalleryCount(data.photos.length);
+    } catch (error) {
+      console.error(
+        "Unable to load gallery count:",
+        error
+      );
+
+      setGalleryCount(0);
+    }
+  };
+
+  loadGalleryCount();
+}, []);
+
   const logout = () => {
     localStorage.removeItem("adminToken");
     window.location.href = "/admin";
@@ -55,7 +94,6 @@ function Admin() {
 
       </aside>
 
-
       {/* MAIN CONTENT */}
       <main className="admin-content">
 
@@ -63,7 +101,10 @@ function Admin() {
 
           <div>
             <p>ADMIN DASHBOARD</p>
-            <h1>Welcome back 👋</h1>
+
+            <h1>
+              Welcome back 👋
+            </h1>
           </div>
 
           <div className="admin-user">
@@ -74,13 +115,15 @@ function Admin() {
 
             <div>
               <strong>Admin</strong>
-              <span>PrudhviSai Events</span>
+
+              <span>
+                PrudhviSai Events
+              </span>
             </div>
 
           </div>
 
         </header>
-
 
         {/* DASHBOARD STATS */}
         <section
@@ -88,44 +131,55 @@ function Admin() {
           id="dashboard"
         >
 
+          {/* GALLERY COUNT */}
           <div className="stat-card">
+
             <span>📸</span>
 
             <div>
               <p>Gallery Photos</p>
-              <h2>0</h2>
+
+              <h2>
+                {galleryCount}
+              </h2>
             </div>
 
           </div>
 
-
+          {/* EVENT MANAGERS */}
           <div className="stat-card">
+
             <span>👥</span>
 
             <div>
               <p>Event Managers</p>
+
               <h2>3</h2>
             </div>
 
           </div>
 
-
+          {/* ENQUIRIES */}
           <div className="stat-card">
+
             <span>📩</span>
 
             <div>
               <p>Enquiries</p>
+
               <h2>0</h2>
             </div>
 
           </div>
 
-
+          {/* EVENT CATEGORIES */}
           <div className="stat-card">
+
             <span>🎉</span>
 
             <div>
               <p>Event Categories</p>
+
               <h2>11</h2>
             </div>
 
@@ -133,17 +187,13 @@ function Admin() {
 
         </section>
 
-
         {/* GALLERY */}
         <section
           className="admin-gallery-section"
           id="gallery"
         >
-
           <GalleryAdmin />
-
         </section>
-
 
         {/* EVENT MANAGERS */}
         <section
@@ -155,14 +205,15 @@ function Admin() {
 
             <div>
               <p>OUR TEAM</p>
+
               <h2>Event Managers</h2>
             </div>
 
           </div>
 
-
           <div className="manager-admin-grid">
 
+            {/* MANAGER 1 */}
             <div className="manager-admin-card">
 
               <div className="manager-avatar">
@@ -183,7 +234,7 @@ function Admin() {
 
             </div>
 
-
+            {/* MANAGER 2 */}
             <div className="manager-admin-card">
 
               <div className="manager-avatar">
@@ -204,7 +255,7 @@ function Admin() {
 
             </div>
 
-
+            {/* MANAGER 3 */}
             <div className="manager-admin-card">
 
               <div className="manager-avatar">
@@ -229,7 +280,6 @@ function Admin() {
 
         </section>
 
-
         {/* ENQUIRIES */}
         <section
           className="admin-section"
@@ -240,6 +290,7 @@ function Admin() {
 
             <div>
               <p>CUSTOMER MESSAGES</p>
+
               <h2>Enquiries</h2>
             </div>
 
@@ -249,7 +300,9 @@ function Admin() {
 
             <div>📩</div>
 
-            <h3>No enquiries yet</h3>
+            <h3>
+              No enquiries yet
+            </h3>
 
             <p>
               Customer enquiries will appear here.
@@ -258,7 +311,6 @@ function Admin() {
           </div>
 
         </section>
-
 
         {/* SETTINGS */}
         <section
@@ -270,6 +322,7 @@ function Admin() {
 
             <div>
               <p>WEBSITE</p>
+
               <h2>Settings</h2>
             </div>
 
@@ -279,7 +332,9 @@ function Admin() {
 
             <div>⚙️</div>
 
-            <h3>Website Settings</h3>
+            <h3>
+              Website Settings
+            </h3>
 
             <p>
               Additional website settings will be added here.
@@ -296,3 +351,4 @@ function Admin() {
 }
 
 export default Admin;
+

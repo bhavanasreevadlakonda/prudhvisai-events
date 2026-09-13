@@ -15,8 +15,8 @@ body {
 
   background-image:
     linear-gradient(
-      rgba(255, 248, 240, 0.30),
-      rgba(255, 248, 240, 0.30)
+      rgba(255, 248, 240, 0.20),
+      rgba(255, 248, 240, 0.20)
     ),
     url("/wedding-bg.jpeg");
 
@@ -125,7 +125,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
 
-  background: rgba(255, 248, 243, 0.25);
+  background: rgba(255, 248, 243, 0.12);
 
   position: relative;
 }
